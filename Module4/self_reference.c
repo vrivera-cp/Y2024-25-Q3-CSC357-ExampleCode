@@ -17,7 +17,7 @@ int main(void)
 
     for (struct node *i = &head; i != NULL; i = i->next)
     {
-        print("%d\n", i->value);
+        printf("%d\n", i->value);
     }
 
     return 0;
