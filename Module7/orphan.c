@@ -9,7 +9,7 @@ int main(void)
     pid_t pid = fork();
     if (pid > 0)
     {
-        printf("I am the parent, my child is: %d\n", pid);
+        printf("I am the parent %d, my child is: %d\n", getpid(), pid);
     }
     else if (pid == 0)
     {

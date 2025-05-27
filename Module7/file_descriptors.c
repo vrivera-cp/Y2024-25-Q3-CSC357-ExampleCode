@@ -8,9 +8,11 @@
 
 int main(void)
 {
-    FILE *f = fopen("shared", "w");
 
     pid_t pid = fork();
+
+    FILE *f = fopen("shared", "w");
+    
     if (pid > 0)
     {
         fprintf(f, "I am the parent!\n");

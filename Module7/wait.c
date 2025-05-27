@@ -4,8 +4,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-#define CHILD_SLEEP_TIME  32
-#define PARENT_SLEEP_TIME  16
+#define CHILD_SLEEP_TIME  10
+#define PARENT_SLEEP_TIME  5
 
 int main(void)
 {
@@ -16,6 +16,7 @@ int main(void)
         printf("I am the child. Going to sleep for %d seconds.\n", CHILD_SLEEP_TIME);
         sleep(CHILD_SLEEP_TIME);
         printf("I am the child. I am awake!\n");
+        return EXIT_SUCCESS;
     }
     else if (pid < 0)
     {
@@ -37,6 +38,7 @@ int main(void)
     {
         printf("Oh no! What happened to my child?\n");
     }
+    sleep(PARENT_SLEEP_TIME);
 
     return EXIT_SUCCESS;
 }
